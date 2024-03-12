@@ -29,7 +29,7 @@
                         <td>ไข่เล็ก</td>
                         <td>000-0000000</td>
                         <td><a type='button' href='#'class='btn btn-danger'>ลบ</a></td>
-                        <td><a type='button'href='{{ route('addcar') }}' class='btn btn-secondary'>แก้ไข</a></td>
+                        <td><a type='button'href='http://127.0.0.1:8000/addcar' class='btn btn-secondary'>แก้ไข</a></td>
                     </tr>";
             }
         @endphp
