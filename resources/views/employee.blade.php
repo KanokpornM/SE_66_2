@@ -7,26 +7,24 @@
     <table class="table table-bordered text-center">
         <tr>
             <td>ID</td>
-            <td>ชิ่อ</td>
+            <td>ชื่อ</td>
             <td>นามสกุล</td>
             <td>ตำแหน่ง</td>
             <td>เบอร์</td>
             <td>ลบ</td>
             <td>แก้ไข</td>
         </tr>
-        @php
-            for ($x = 0; $x < 5; $x++) {
-                echo "<tr>
-    <td>$x</td>
-    <td>$x</td>
-    <td>$x</td>
-    <td>$x</td>
-    <td>$x</td>
-    <td><button type='button' class='btn btn-danger'>ลบ</button></td>
-    <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
-    </tr>";
-            }
-        @endphp
+       @foreach($emp as $item)
+        <tr>
+            <td>{{$item->emp_id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->lastname}}</td>
+            <td>{{$item->po_id}}</td>
+            <td>{{$item->phone}}</td>
+            <td>ลบ</td>
+            <td>แก้ไข</td>
+        </tr>
+       @endforeach
     </table>
 
 @endsection
