@@ -4,22 +4,22 @@
 @section('content')
     <h2>List</h2>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered text-center">
         <tr>
-            <td style="text-align:center">อาการ</td>
-            <td style="text-align:center">อะไหล่</td>
-            <td style="text-align:center">จำนวน</td>
-            <td style="text-align:center">ลบ</td>
-            <td style="text-align:center">แก้ไข</td>
+            <td>อาการ</td>
+            <td>อะไหล่</td>
+            <td>จำนวน</td>
+            <td>ลบ</td>
+            <td>แก้ไข</td>
         </tr>
         @php
             for ($x = 0; $x < 5; $x++) {
                 echo "<tr>
-    <td style='text-align:center'>$x</td>
-    <td style='text-align:center'>$x</td>
-    <td style='text-align:center'>$x</td>
-    <td style='text-align:center'><button type='button' class='btn btn-danger'>ลบ</button></td>
-    <td style='text-align:center'><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
+    <td>$x</td>
+    <td>$x</td>
+    <td>$x</td>
+    <td><button type='button' class='btn btn-danger'>ลบ</button></td>
+    <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
     </tr>";
             }
         @endphp

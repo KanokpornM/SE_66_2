@@ -4,26 +4,26 @@
 @section('content')
     <h2>ข้อมูลรับรถ</h2>
     <p class="">ID รับรถ</p>
-    <table class="table table-bordered">
+    <table class="table table-bordered text-center">
         <tr>
-            <td style="text-align:center">ชิ่อ</td>
-            <td style="text-align:center">สกุล</td>
-            <td style="text-align:center">เบอร์</td>
-            <td style="text-align:center">ทะเบียนรถ</td>
-            <td style="text-align:center">วันที่</td>
-            <td style="text-align:center">ลบ</td>
-            <td style="text-align:center">แก้ไข</td>
+            <td>ชิ่อ</td>
+            <td>สกุล</td>
+            <td>เบอร์</td>
+            <td>ทะเบียนรถ</td>
+            <td>วันที่</td>
+            <td>ลบ</td>
+            <td>แก้ไข</td>
         </tr>
         @php
             for ($x = 0; $x < 5; $x++) {
                 echo "<tr>
-        <td style='text-align:center'>บาส</td>
-        <td style='text-align:center'>ไข่เล็ก</td>
-        <td style='text-align:center'>000-0000000</td>
-        <td style='text-align:center'>112aa</td>
-        <td style='text-align:center'>32/13/9999</td>
-        <td style='text-align:center'><button type='button' class='btn btn-danger'>ลบ</button></td>
-        <td style='text-align:center'><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
+        <td>บาส</td>
+        <td>ไข่เล็ก</td>
+        <td>000-0000000</td>
+        <td>112aa</td>
+        <td>32/13/9999</td>
+        <td><button type='button' class='btn btn-danger'>ลบ</button></td>
+        <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
     </tr>";
             }
         @endphp
