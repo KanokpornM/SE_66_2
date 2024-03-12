@@ -36,3 +36,7 @@ Route::get('/quotation',[AdminController::class,'quotation'])->name('quotation')
 
 Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
 
+Route::get('/addcar', function () {
+    return view('addcar');
+})->name('addcar');
+
