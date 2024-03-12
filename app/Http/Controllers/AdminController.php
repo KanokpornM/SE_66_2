@@ -55,5 +55,10 @@ class AdminController extends Controller
 
     }
 
+    function addcar(){
+        return view('addcar');
+
+    }
+
 
 }
