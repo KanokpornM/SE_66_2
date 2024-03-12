@@ -28,11 +28,11 @@
                         <td>บาส</td>
                         <td>ไข่เล็ก</td>
                         <td>000-0000000</td>
-                        <td><button type='button' class='btn btn-danger'>ลบ</button></td>
-                        <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
+                        <td><a type='button' href='#'class='btn btn-danger'>ลบ</a></td>
+                        <td><a type='button'href='{{ route('addcar') }}' class='btn btn-secondary'>แก้ไข</a></td>
                     </tr>";
             }
         @endphp
-    
+    <a type="button" class="btn btn-success" href="{{ route('addcar') }}">เพิ่ม</a>
     
 @endsection

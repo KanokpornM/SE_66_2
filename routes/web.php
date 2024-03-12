@@ -54,3 +54,7 @@ Route::get('/receipt', function () {
     return view('receipt');
 })->name('receipt');
 
+Route::get('/addcar', function () {
+    return view('addcar');
+})->name('addcar');
+
