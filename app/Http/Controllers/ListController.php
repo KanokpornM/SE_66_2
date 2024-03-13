@@ -10,7 +10,15 @@ use App\Models\ListModel;
 class ListController extends Controller
 {
     function index(){
-        $list = ListModel::getAll();
-        return view('list',compact('list'));
+        $search = '';
+        $list = ListModel::search('');
+        return view('list',compact('list','search'));
     }
+    function search(Request $request){
+        $search = $request->search;
+        $list = ListModel::search($search);
+
+        return view('list',compact('list', 'search'));
+    }
+    
 }

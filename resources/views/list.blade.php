@@ -1,7 +1,12 @@
 @extends('layout')
 @section('title', 'List')
 
+@section('search',route('listSearch'))
+
+
+
 @section('content')
+    
     <h2>List</h2>
 
     <table class="table table-bordered text-center">
@@ -17,7 +22,7 @@
         <tr>
             <td>{{$item->list_id}}</td>
             <td>{{$item->Quotation_id}}</td>
-            <td>---</td>
+            <td>{{$search}}</td>
             <td><button type='button' class='btn btn-danger'>ลบ</button></td>
         </tr>
         @endforeach

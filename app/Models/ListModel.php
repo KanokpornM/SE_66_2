@@ -13,4 +13,8 @@ class ListModel extends Model
     public static function getAll(){
         return DB::table('list')->get();
     }
+
+    public static function search($key){
+        return DB::table('list')->where('list_id', $key)->get();
+    }
 }

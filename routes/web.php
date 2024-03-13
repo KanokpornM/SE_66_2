@@ -29,6 +29,7 @@ Route::get('/carcheck',[AdminController::class,'carcheck'])->name('carcheck');
 Route::get('/recive',[AdminController::class,'recive'])->name('recive');
 
 Route::get('/list',[ListController::class,'index'])->name('list');
+Route::post('/list',[ListController::class,'search'])->name('listSearch');
 
 #oute::get('/employee',[AdminController::class,'employee'])->name('employee');
 
