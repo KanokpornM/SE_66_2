@@ -3,6 +3,7 @@
 
 @section('content')
     <h2>ข้อมูลรถ</h2>
+    <div class="container" >
     <table class="table table-bordered text-center">
         <tr>
             <td>ทะเบียนรถ</td>
@@ -33,6 +34,10 @@
                     </tr>";
             }
         @endphp
-    <a type="button" class="btn btn-success" href="{{ route('addcar') }}">เพิ่ม</a>
+        </div>
+        <div class="d-flex justify-content-end mt2">
+            <a type="button" class="btn btn-success me2" href="{{ route('addcar') }}">เพิ่ม</a>
+        </div>
+    
     
 @endsection

@@ -40,7 +40,7 @@
                 <a class="nav-link" href="{{route('list')}}">List</a>
               </li>
               <li class="nav-item me-5">
-                <a class="nav-link" href="{{route('emp')}}">จัดการพนักงาน</a>
+                <a class="nav-link" href="{{route('employee')}}">จัดการพนักงาน</a>
               </li>
             </ul>
           </div>

@@ -14,17 +14,7 @@
             <td>ลบ</td>
             <td>แก้ไข</td>
         </tr>
-       @foreach($emp as $item)
-        <tr>
-            <td>{{$item->emp_id}}</td>
-            <td>{{$item->name}}</td>
-            <td>{{$item->lastname}}</td>
-            <td>{{$item->po_id}}</td>
-            <td>{{$item->phone}}</td>
-            <td>ลบ</td>
-            <td>แก้ไข</td>
-        </tr>
-       @endforeach
+       
     </table>
 
 @endsection

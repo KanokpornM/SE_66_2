@@ -28,7 +28,7 @@ Route::get('/recive',[AdminController::class,'recive'])->name('recive');
 
 Route::get('/list',[AdminController::class,'list'])->name('list');
 
-#Route::get('/employee',[AdminController::class,'employee'])->name('employee');
+Route::get('/employee',[AdminController::class,'employee'])->name('employee');
 
 Route::get('/partlist',[AdminController::class,'partlist'])->name('partlist');
 
@@ -38,4 +38,4 @@ Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
 
 Route::get('/addcar',[AdminController::class,'addcar'])->name('addcar');
 
-Route::get('/employee',[employeeController::class,'index'])->name('emp');
+#Route::get('/employee',[employeeController::class,'index'])->name('emp');
