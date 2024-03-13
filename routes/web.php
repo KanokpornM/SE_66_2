@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\employeeController;
+use App\Http\Controllers\ListController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +28,7 @@ Route::get('/carcheck',[AdminController::class,'carcheck'])->name('carcheck');
 
 Route::get('/recive',[AdminController::class,'recive'])->name('recive');
 
-Route::get('/list',[AdminController::class,'list'])->name('list');
+Route::get('/list',[ListController::class,'index'])->name('list');
 
 #oute::get('/employee',[AdminController::class,'employee'])->name('employee');
 

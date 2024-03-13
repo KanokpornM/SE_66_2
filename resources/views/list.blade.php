@@ -10,9 +10,19 @@
             <td>อะไหล่</td>
             <td>จำนวน</td>
             <td>ลบ</td>
-            <td>แก้ไข</td>
         </tr>
-        @php
+
+        @foreach($list as $item)
+
+        <tr>
+            <td>{{$item->list_id}}</td>
+            <td>{{$item->Quotation_id}}</td>
+            <td>---</td>
+            <td><button type='button' class='btn btn-danger'>ลบ</button></td>
+        </tr>
+        @endforeach
+
+        <!--
             for ($x = 0; $x < 5; $x++) {
                 echo "<tr>
     <td>$x</td>
@@ -22,7 +32,7 @@
     <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
     </tr>";
             }
-        @endphp
+        -->
     </table>
 
     <div class="d-flex justify-content-end mt-4">
