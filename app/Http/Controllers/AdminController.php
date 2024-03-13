@@ -33,6 +33,7 @@ class AdminController extends Controller
 
     function list(){
         $list = DB::table('list')->get();
+        
         return view('list',compact('list'));
 
     }
