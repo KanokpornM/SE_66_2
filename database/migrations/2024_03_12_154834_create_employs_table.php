@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->integer('po_id');
-            $table->integer('phone');
-            $table->timestamps();
+            $table->String('phone');
         });
     }
 

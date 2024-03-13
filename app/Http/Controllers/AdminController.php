@@ -60,5 +60,10 @@ class AdminController extends Controller
 
     }
 
+    function addcarcheck(){
+        return view('addcarcheck');
+
+    }
+
 
 }
