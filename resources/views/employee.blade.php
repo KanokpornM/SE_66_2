@@ -14,11 +14,16 @@
             <td>ลบ</td>
             <td>แก้ไข</td>
         </tr>
-       @foreach($emp as $item){
+       @foreach($emp as $item)
         <tr>
-            <td>{{$item->emp_id}}</td>
+            <td>{{$item->id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->lastname}}</td>
+            <td>{{$item->po}}</td>
+            <td>{{$item->phone}}</td>
+            
         </tr>
-       }
+       
        @endforeach
     </table>
 

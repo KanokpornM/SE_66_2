@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class employeeController extends Controller
 {
     function index(){
-        $emp = DB::table('employs')->get();
+        $emp = DB::table('emp')->get();
         return view('employee',compact('emp'));
     }
 }
