@@ -62,9 +62,20 @@
          @enderror
          <br>
 
+         <div class="form-group">
+            <label for="year"></label>
+            <input style="text-align:center" type="text" name="year" placeholder="ปีของรถ">
+        </div>
+        @error('year')
+            <div style="color:red">
+                <span>{{$message}}</span>
+            </div>
+         @enderror
+         <br>
+
         <div class="form-group">
             <label for="ownerName"></label>
-            <input style="text-align:center" type="text" name="ownerName" placeholder="ขื่อเจ้าของรถ">
+            <input style="text-align:center" type="text" name="ownerName" placeholder="ชื่อเจ้าของรถ">
         </div>
         @error('ownerName')
             <div style="color:red">

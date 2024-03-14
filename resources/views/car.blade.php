@@ -21,6 +21,7 @@
             <td style="text-align:center">แบรนด์รถ</td>
             <td style="text-align:center">เลขคัสซี</td>
             <td style="text-align:center">สีรถ</td>
+            <td style="text-align:center">ปีของรถ</td>
             <td style="text-align:center">ชื่อเจ้าของรถ</td>
             <td style="text-align:center">นามสกุลเจ้าของรถ</td>
             <td style="text-align:center">เบอร์โทรศัพท์เจ้าของรถ</td>
@@ -35,6 +36,7 @@
                 <td style='text-align:center'>{{$item->brand}}</td>
                 <td style='text-align:center'>{{$item->chassis}}</td>
                 <td style='text-align:center'>{{$item->color}}</td>
+                <td style='text-align:center'>{{$item->year}}</td>
                 <td style='text-align:center'>{{$item->ownerName}}</td>
                 <td style='text-align:center'>{{$item->ownerLastName}}</td>
                 <td style='text-align:center'>{{$item->ownerNumber}}</td>

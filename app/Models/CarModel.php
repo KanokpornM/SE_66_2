@@ -16,6 +16,7 @@ class CarModel extends Model
         'brand',
         'chassis',
         'color',
+        'year',
         'ownerName',
         'ownerLastName',
         'ownerNumber',
