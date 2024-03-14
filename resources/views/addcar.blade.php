@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'addcar')
+@section('title', 'AddCar')
 
 @section('content')
     <h2>เพิ่มข้อมูลรถ</h2>

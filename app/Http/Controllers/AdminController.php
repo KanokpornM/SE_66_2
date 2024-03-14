@@ -73,5 +73,10 @@ class AdminController extends Controller
 
     }
 
+    function addrecive(){
+        return view('addrecive');
+
+    }
+
 
 }

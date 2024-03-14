@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Carcheck')
+@section('title', 'Carrecive')
 
 @section('content')
     <h2>ข้อมูลรับรถ</h2>
@@ -29,7 +29,7 @@
         @endphp
     </table>
     <div class="d-flex justify-content-end mt2">
-        <a type="button" class="btn btn-success me2" href="{{ route('addcarcheck') }}">เพิ่ม</a>
+        <a type="button" class="btn btn-success me2" href="{{ route('addcarrecive') }}">เพิ่ม</a>
     </div>
 
 @endsection

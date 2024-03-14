@@ -28,10 +28,10 @@
                 <a class="nav-link" href="{{route('car')}}">ข้อมูลรถ</a>
               </li>
               <li class="nav-item me-5">
-                <a class="nav-link" href="{{route('carcheck')}}">ข้อมูลรับรถ</a>
+                <a class="nav-link" href="{{route('carrecive')}}">ข้อมูลรับรถ</a>
               </li>
               <li class="nav-item me-5">
-                <a class="nav-link" href="{{route('carrecive')}}">ประวิตอาการรถ</a>
+                <a class="nav-link" href="{{route('carcheck')}}">ประวิตอาการรถ</a>
               </li>
               <li class="nav-item me-5">
                 <a class="nav-link" href="{{route('recive')}}">ตรวจสอบรถ</a>
