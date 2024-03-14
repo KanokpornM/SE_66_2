@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\CarreciveController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/car',[AdminController::class,'car'])->name('car');
+Route::get('/car', function () {
+    return view('car');
+})->name('car');
+
+Route::get('/car', [CarController::class,'index'])->name('car');
+Route::get('/addcar',[CarController::class,'addcar'])->name('addcar');
+Route::post('insert',[CarController::class,'insert']);
+Route::get('/edit/{car_id}',[CarController::class,'edit'])->name('edit');
+Route::post('update/{car_id}',[CarController::class,'update'])->name('update');
+Route::get('/delete/{car_id}',[CarController::class,'delete'])->name('delete');
+Route::post('/car',[CarController::class,'search'])->name('search');
 
 Route::get('/carrecive',[carreciveController::class,'carrecive'])->name('carrecive');
 Route::post('/carrecive',[carreciveController::class,'search'])->name('carreciveSearch');
