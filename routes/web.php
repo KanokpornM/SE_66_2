@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\CarreciveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ Route::get('/', function () {
 
 Route::get('/car',[AdminController::class,'car'])->name('car');
 
-Route::get('/carrecive',[AdminController::class,'carrecive'])->name('carrecive');
+Route::get('/carrecive',[carreciveController::class,'carrecive'])->name('carrecive');
+Route::post('/carrecive',[carreciveController::class,'search'])->name('carreciveSearch');
 
 Route::get('/carcheck',[AdminController::class,'carcheck'])->name('carcheck');
 
