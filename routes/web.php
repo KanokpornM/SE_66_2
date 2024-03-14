@@ -44,3 +44,5 @@ Route::get('/addcar',[AdminController::class,'addcar'])->name('addcar');
 Route::get('/employee',[employeeController::class,'index'])->name('employee');
 
 Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
+
+Route::get('/addcarrecive',[AdminController::class,'addcarrecive'])->name('addcarrecive');

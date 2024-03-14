@@ -3,23 +3,20 @@
 
 @section('content')
     <h2>เพิ่มข้อมูลรับรถ</h2>
+    <h1>ID รับรถ</h1>
     <div class="">
         <center>
-        <input type="text" class="from-control" placeholder="ขื่อ"> 
-        <input type="text" class="from-control" placeholder="นามสกุล"><br><br>
-        <input type="text" class="from-control" placeholder="เบอร์โทรศัพท์"> <br><br>
-        <input type="date" class="from-control" placeholder="วันที่"><br><br>
+        <input type="text" class="from-control" placeholder="No."> <br><br>
+        <input type="text" class="from-control" placeholder="อาการ"><br><br>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              ทะเบียนรถ
+              สถานะ
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">####</a></li>
               
             </ul>
           </div><br>
-    </center>
-    </div> <br><br>
     </center>
     </div>
     <div>

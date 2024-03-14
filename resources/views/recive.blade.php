@@ -21,5 +21,8 @@
             }
         @endphp
     </table>
+    <div class="d-flex justify-content-end mt2">
+        <a type="button" class="btn btn-success me2" href="{{ route('addcarrecive') }}">เพิ่ม</a>
+    </div>
 
 @endsection
