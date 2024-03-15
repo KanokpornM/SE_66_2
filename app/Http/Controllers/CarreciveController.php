@@ -15,7 +15,7 @@ class CarreciveController extends Controller
         return view('carrecive',compact('carrecive','search'));
     }
     
-    function search(Request $request){
+    /*function search(Request $request){
         
         $search = $request->search;
         if($search != ''){
@@ -24,5 +24,39 @@ class CarreciveController extends Controller
             $carrecive = Carrecive::getAll();
         }
         return view('carrecive',compact('carrecive','search'));
+    }*/
+
+    function addcarrecive(){
+        return view('addcarrecive');
+    }
+
+    function insert(Request $request){
+        $request->validate(
+            [
+                'customerName'=>'required',
+                'customerLastName'=>'required',
+                'customerNumber'=>'required|max:10',
+                'car_id'=>'required|max:7',
+                'date'=>'date',
+            ],
+            [
+                'customerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
+                'customerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
+                'customerNumber.required' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถ',
+                'customerNumber.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
+                'car_id.required' =>'กรุณากรอกทะเบียนรถ',
+                'car_id.max' => 'ทะเบียนรถไม่ควรเกิน 7 ตัวอักษร',
+                'date' =>'กรุณากรอกวันที่',
+            ]
+        );
+        $data=[
+            'customerName'=>$request->customerName,
+            'customerLastName'=>$request->customerLastName,
+            'customerNumber'=>$request->customerNumber,
+            'car_id'=>$request->car_id,
+            'date'=>$request->date,  
+        ];
+        DB::table('carrecive')->insert($data);
+        return redirect('/carrecive');
     }
 }

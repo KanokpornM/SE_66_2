@@ -1,7 +1,6 @@
 @extends('layout')
 @section('title', 'Carcheck')
 
-@section('search',route('carreciveSearch'))
 
 @section('content')
     <h2>ข้อมูลรับรถ</h2>

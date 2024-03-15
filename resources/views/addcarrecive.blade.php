@@ -1,13 +1,43 @@
 @extends('layout')
-@section('title', 'AddCarRevice')
+@section('title', 'addcarrevice')
 
 @section('content')
     <h2>เพิ่มข้อมูลรับรถ</h2>
-    <div class="">
-        <center>
-        <input type="text" class="from-control" placeholder="ขื่อ"> 
-        <input type="text" class="from-control" placeholder="นามสกุล"><br><br>
-        <input type="text" class="from-control" placeholder="เบอร์โทรศัพท์"> <br><br>
+    
+    <form method="POST" action="/insertcarrecive">
+      @csrf  
+      <center>
+        <div class="form-group">
+            <label for="customerName"></label>
+            <input style="text-align:center" type="text" name="customerName" placeholder="ชื่อ">
+        </div>
+        @error('customerName')
+            <div style="color:red">
+                <span>{{$message}}</span>
+            </div>
+        @enderror
+        <br> 
+        <div class="form-group">
+          <label for="customerLastName"></label>
+          <input style="text-align:center" type="text" name="customerLastName" placeholder="นามสกุล">
+        </div>
+      @error('customerLastName')
+          <div style="color:red">
+              <span>{{$message}}</span>
+          </div>
+      @enderror
+      <br> 
+      <div class="form-group">
+        <label for="customerPhone"></label>
+        <input style="text-align:center" type="text" name="customerPhone" placeholder="เบอร์">
+      </div>
+    @error('customerPhone')
+        <div style="color:red">
+            <span>{{$message}}</span>
+        </div>
+    @enderror
+    <br> 
+        
         <input type="date" class="from-control" placeholder="วันที่"><br><br>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -15,18 +45,16 @@
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">####</a></li>
-              
+              <li><a class="dropdown-item" href="#">####</a></li>
+              <li><a class="dropdown-item" href="#">####</a></li>
+              <li><a class="dropdown-item" href="#">####</a></li>
             </ul>
           </div><br>
     </center>
-    </div> <br><br>
-    </center>
     </div>
-    <div>
-        <center>
-        <a type="button" class="btn btn-danger" href="{{ route('car') }}">ยกเลิก</a>
-        <a type="button" class="btn btn-success" href="{{ route('car') }}">เพิ่ม</a>
-        </center>
+    <div class="d-flex flex-row justify-content-center" style="gap:20px">
+          <a href="/carrecive" class="btn btn-danger" style="width:70px; height:38px;"> ยกเลิก</a> 
+          <input type="submit" value="เพิ่ม" class="btn btn-success" style="width:70px; height:38px;">
     </div>
-    
+    </form> 
 @endsection
