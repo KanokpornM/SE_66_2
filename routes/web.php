@@ -7,6 +7,7 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\CarreciveController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarCheckController;
+use App\Http\Controllers\reciveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,6 @@ Route::get('/addcarcheck',[CarCheckController::class,'addcarcheck'])->name('addc
 Route::get('/editcarcheck/{carcheck_id}',[CarCheckController::class,'edit'])->name('editcarcheck');
 Route::post('updatecarcheck/{carcheck_id}',[CarCheckController::class,'update'])->name('updatecarcheck');
 
-Route::get('/recive',[AdminController::class,'recive'])->name('recive');
 
 Route::get('/list',[ListController::class,'index'])->name('list');
 Route::post('/list',[ListController::class,'search'])->name('listSearch');
@@ -68,4 +68,6 @@ Route::get('/employee',[employeeController::class,'index'])->name('employee');
 
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
 
-Route::get('/addrecive',[AdminController::class,'addrecive'])->name('addrecive');
+Route::get('/recive',[reciveController::class,'index'])->name('recive');
+Route::get('/edit/{carcheck_id}',[reciveController::class,'edit'])->name('edit');
+Route::get('/addrecive',[reciveController::class,'addrecive'])->name('addrecive');
