@@ -12,6 +12,11 @@
                 <h3>อาการ</h3>
                 <label for="carcheck_id"></label>
                 <input style="text-align:center" type="text" name="detail" placeholder="ระบุอาการ" value="{{$cars->detail}}">
+                @error('detail')
+                <div style="color:red">
+                    <span>{{$message}}</span>
+                </div>
+                @enderror 
             </center>
         </div><br>
         

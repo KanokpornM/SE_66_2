@@ -15,14 +15,19 @@
                     @foreach($cars as $car)
                         <option value="{{ $car->carR_id }}">{{ $car->car_id }}</option>
                     @endforeach
-                </select>
+                </select>                
             </center>
         </div><br>
         
         <div class="">
             <center>
                 <h3>อาการ</h3>
-                <input type="text" class="w-25" style="text-align:center" placeholder="ระบุอาการ" name="detail"> 
+                <input type="text" class="w-25" style="text-align:center" placeholder="ระบุอาการ" name="detail">
+                @error('detail')
+                <div style="color:red">
+                    <span>{{$message}}</span>
+                </div>
+                @enderror 
             </center>
         </div><br>
         

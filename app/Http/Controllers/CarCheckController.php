@@ -36,6 +36,14 @@ class CarCheckController extends Controller
     }
 
     function insert(Request $request){
+        $request->validate(
+            [
+                'detail'=>'required|max:50',
+            ],
+            [
+                'detail.required' =>'กรุณาระบุอาการ',
+            ]
+        );
         $data = [
             'carR_ID' => $request->car_id,
             'detail' => $request->detail,
@@ -61,6 +69,14 @@ class CarCheckController extends Controller
     }
 
     function update(Request $request,$carcheck_id){
+        $request->validate(
+            [
+                'detail'=>'required|max:50',
+            ],
+            [
+                'detail.required' =>'กรุณาระบุอาการ',
+            ]
+        );        
         $data=[
             'detail'=>$request->detail,
         ];
