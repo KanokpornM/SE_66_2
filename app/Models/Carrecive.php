@@ -17,4 +17,8 @@ class Carrecive extends Model
     public static function search($key){
         return DB::table('carrecive')->where('carR_id', $key)->get();
     }
+
+    public static function getCarList(){
+        return DB::table('car')->get();
+    }
 }

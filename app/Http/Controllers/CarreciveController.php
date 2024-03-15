@@ -27,10 +27,12 @@ class CarreciveController extends Controller
     }*/
 
     function addcarrecive(){
-        return view('addcarrecive');
+        $carList = Carrecive::getCarList();
+        return view('addcarrecive',compact('carList'));
     }
 
     function insert(Request $request){
+
         $request->validate(
             [
                 'customerName'=>'required',
@@ -59,4 +61,5 @@ class CarreciveController extends Controller
         DB::table('carrecive')->insert($data);
         return redirect('/carrecive');
     }
+
 }

@@ -45,9 +45,9 @@
 
     <select class="form-select w-25" aria-label="Default select example" >
       <option selected hidden>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      @foreach ($carList as $item)
+      <option value="{{$item->car_id}}">{{$item->car_id}}</option>
+      @endforeach
     </select>
 
 
