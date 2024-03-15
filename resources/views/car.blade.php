@@ -40,11 +40,11 @@
                 <td>{{$item->ownerName}}</td>
                 <td>{{$item->ownerLastName}}</td>
                 <td>{{$item->ownerNumber}}</td>
-                <td class='content-center'><button type='button' class='btn btn-danger'>
-                    <a href="{{route('delete',$item->car_id)}}" onclick="return confirm('ต้องการลบข้อมูลรถของหมายเลขทะเบียน {{$item->car_id}} หรือไม่ ?')">ลบ</a></button></td>
+                <td>
+                    <a type="button" class="btn btn-danger" href="{{route('delete',$item->car_id)}}" onclick="return confirm('ต้องการลบข้อมูลรถของหมายเลขทะเบียน {{$item->car_id}} หรือไม่ ?')">ลบ</a></td>
 
-                <td style='text-align:center'><button type='button' class='btn btn-secondary'>
-                    <a href="{{route('edit',$item->car_id)}}">แก้ไข</a></button></td>
+                <td>
+                    <a type="button" class="btn btn-secondary" href="{{route('edit',$item->car_id)}}">แก้ไข</a></button></td>
             </tr>
         @endforeach
 
