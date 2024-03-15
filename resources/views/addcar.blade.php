@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'addcar')
-@section('seachBar','none')
+@section('searchBar','none')
 @section('content')
     <h2 >เพิ่มข้อมูลรถ</h2>
 

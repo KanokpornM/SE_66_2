@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'AddRecive')
-
+@section('searchBar','none')
 @section('content')
     <h2>เพิ่มข้อมูลตรวจสอบรถ</h2>
     <h1>ID รับรถ</h1>
