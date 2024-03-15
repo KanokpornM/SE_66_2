@@ -12,9 +12,9 @@
         </tr>
         @foreach ($recives as $item)
             <tr>
-                <td>{{ $item->อาการ }}</td>
-                <td>{{ $item->เพิ่มโดย }}</td>
-                <td>{{ $item->สถานะ }}</td>
+                <td>{{ $item->detail }}</td>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->name2 }}</td>
                 <td><button type='button' class='btn btn-secondary'>
                         <a href="{{ route('edit', $item->carcheck_id) }}">แก้ไข</a>
                     </button>

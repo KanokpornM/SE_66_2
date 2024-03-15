@@ -7,7 +7,7 @@
 @section('content')
     <h2>เพิ่มข้อมูลรับรถ</h2>
     
-    <form method="POST" action="/insertcarrecive">
+    <form method="POST" action="{{route('insertcarrecive')}}">
       @csrf  
       <center>
         <div class="form-group">

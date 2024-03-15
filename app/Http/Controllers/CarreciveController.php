@@ -38,22 +38,16 @@ class CarreciveController extends Controller
         'receiveDate' =>'กรุณากรอกวันที่',
     ]);
 
-    // ตรวจสอบว่า 'car_id' ไม่ใช่ค่าว่าง (NULL) ก่อนที่จะบันทึกข้อมูล
-    if($request->has('car_id')) {
-        $car_id = $request->car_id;
-    } else {
-        return back()->with('error', 'กรุณาเลือกทะเบียนรถ');
-        // แสดงข้อความแจ้งเตือนหรือทำการ redirect กลับไปยังหน้าแรกหรือหน้าที่เหมาะสม
-    }
+    $data=[
+        'customerName'=>$request->customerName,
+        'customerLastName'=>$request->$request->customerLastName,
+        'customerNumber'=>$request->customerNumber,
+        'car_id'=>$request->car_id,
+        'date'=>$request->receiveDate
+    ];
 
-    $carrecive = new Carrecive;
-    $carrecive->customerName = $request->customerName;
-    $carrecive->customerLastName = $request->customerLastName;
-    $carrecive->customerNumber = $request->customerPhone;
-    $carrecive->car_id = $car_id; // กำหนดค่า 'car_id' ที่ตรวจสอบแล้ว
-    $carrecive->date = $request->receiveDate;
-    $carrecive->save();
+    DB::table('carrecive')->insert($data);
 
-    return redirect('/carrecive');
+    return redirect('carrecive');
     }   
 }

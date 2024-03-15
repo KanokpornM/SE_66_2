@@ -15,6 +15,15 @@ class reciveController extends Controller
         ->get();
         return view('recive',compact('recives'));
     }
+
+    function index2(){
+        $recives=DB::table('carcheck')
+        ->join('addby','addby.addBy_id','=','carcheck.addBy_id')
+        ->join('carcheckstatus','carcheckstatus.carcheckstatus_id','=','carcheck.checkcarstatus_id')
+        ->select('carcheck.carcheck_id','carcheck.detail', 'addby.name','carcheckstatus.name as name2')
+        ->get();
+        return view('recive',compact('recives'));
+    }
     function edit($carcheck_id){
         $carcheck=DB::table('carcheck')->where('carcheck_id',$carcheck_id)->first();
         return view('editrecive',compact('carcheck'));
