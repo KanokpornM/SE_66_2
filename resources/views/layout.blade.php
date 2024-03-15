@@ -49,11 +49,14 @@
 
     <div class="container py-2">
 
-      <form class="input-group" action="@yield('search')" method="post">
+          
+      
+      <form class="input-group d-@yield('searchBar')" action="@yield('search')" method="post">
         @csrf
         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" name="search" value="{{ isset($search) ? $search : ''}}" aria-describedby="search-addon" />
         <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
     </form>
+
         @yield('content')
        
 

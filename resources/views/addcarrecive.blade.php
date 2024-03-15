@@ -1,6 +1,9 @@
 @extends('layout')
 @section('title', 'addcarrevice')
 
+<!-- hide search bar     -->
+@section('searchBar','none')
+
 @section('content')
     <h2>เพิ่มข้อมูลรับรถ</h2>
     
@@ -37,19 +40,16 @@
         </div>
     @enderror
     <br> 
-        
-        <input type="date" class="from-control" placeholder="วันที่"><br><br>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              ทะเบียนรถ
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">####</a></li>
-              <li><a class="dropdown-item" href="#">####</a></li>
-              <li><a class="dropdown-item" href="#">####</a></li>
-              <li><a class="dropdown-item" href="#">####</a></li>
-            </ul>
-          </div><br>
+    <div class="form-group">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    </div>
+
+    <br>
     </center>
     </div>
     <div class="d-flex flex-row justify-content-center" style="gap:20px">
