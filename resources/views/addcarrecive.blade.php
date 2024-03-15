@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'addcarrevice')
 
-<!-- hide search bar     -->
+<!--   hide search bar   -->
 @section('searchBar','none')
 
 @section('content')
@@ -12,7 +12,7 @@
       <center>
         <div class="form-group">
             <label for="customerName"></label>
-            <input style="text-align:center" type="text" name="customerName" placeholder="ชื่อ">
+            <input  class="w-25" style="text-align:center" type="text" name="customerName" placeholder="ชื่อ">
         </div>
         @error('customerName')
             <div style="color:red">
@@ -22,7 +22,7 @@
         <br> 
         <div class="form-group">
           <label for="customerLastName"></label>
-          <input style="text-align:center" type="text" name="customerLastName" placeholder="นามสกุล">
+          <input  class="w-25" style="text-align:center" type="text" name="customerLastName" placeholder="นามสกุล">
         </div>
       @error('customerLastName')
           <div style="color:red">
@@ -32,22 +32,24 @@
       <br> 
       <div class="form-group">
         <label for="customerPhone"></label>
-        <input style="text-align:center" type="text" name="customerPhone" placeholder="เบอร์">
+        <input class="w-25" style="text-align:center" type="text" name="customerPhone" placeholder="เบอร์">
       </div>
     @error('customerPhone')
         <div style="color:red">
             <span>{{$message}}</span>
         </div>
     @enderror
+
+
     <br> 
-    <div class="form-group">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
+
+    <select class="form-select w-25" aria-label="Default select example" >
+      <option selected hidden>Open this select menu</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    </div>
+
 
     <br>
     </center>
