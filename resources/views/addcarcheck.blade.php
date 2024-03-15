@@ -22,7 +22,7 @@
         <div class="">
             <center>
                 <h3>อาการ</h3>
-                <input type="text" class="form-select w-25" style="text-align:center" placeholder="ระบุอาการ" name="detail"> 
+                <input type="text" class="w-25" style="text-align:center" placeholder="ระบุอาการ" name="detail"> 
             </center>
         </div><br>
         
