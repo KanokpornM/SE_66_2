@@ -11,11 +11,6 @@
             <label for="car_id"></label>
             <input style="text-align:center" type="text" name="car_id" placeholder="ทะเบียนรถ">
         </div>
-        @error('car_id')
-            <div style="color:red">
-                <span>{{$message}}</span>
-            </div>
-        @enderror
         <br>
 
         <div class="form-group">

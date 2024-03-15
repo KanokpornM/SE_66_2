@@ -15,16 +15,6 @@ class CarreciveController extends Controller
         return view('carrecive',compact('carrecive','search'));
     }
     
-    /*function search(Request $request){
-        
-        $search = $request->search;
-        if($search != ''){
-        $carrecive = Carrecive::search($search);
-        }else{
-            $carrecive = Carrecive::getAll();
-        }
-        return view('carrecive',compact('carrecive','search'));
-    }*/
 
     function addcarrecive(){
         $carList = Carrecive::getCarList();
@@ -32,34 +22,38 @@ class CarreciveController extends Controller
     }
 
     function insert(Request $request){
+    $request->validate([
+        'customerName'=>'required',
+        'customerLastName'=>'required',
+        'customerPhone'=>'required|max:10',
+        'car_id'=>'required|max:7', // ตรวจสอบว่า 'car_id' มีการส่งมาหรือไม่
+        'receiveDate'=>'date',
+    ],[
+        'customerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
+        'customerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
+        'customerPhone.required' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถ',
+        'customerPhone.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
+        'car_id.required' =>'กรุณาเลือกทะเบียนรถ', // ข้อความแจ้งเตือนเมื่อ 'car_id' เป็นค่าว่าง
+        'car_id.max' => 'ทะเบียนรถไม่ควรเกิน 7 ตัวอักษร',
+        'receiveDate' =>'กรุณากรอกวันที่',
+    ]);
 
-        $request->validate(
-            [
-                'customerName'=>'required',
-                'customerLastName'=>'required',
-                'customerNumber'=>'required|max:10',
-                'car_id'=>'required|max:7',
-                'date'=>'date',
-            ],
-            [
-                'customerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
-                'customerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
-                'customerNumber.required' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถ',
-                'customerNumber.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
-                'car_id.required' =>'กรุณากรอกทะเบียนรถ',
-                'car_id.max' => 'ทะเบียนรถไม่ควรเกิน 7 ตัวอักษร',
-                'date' =>'กรุณากรอกวันที่',
-            ]
-        );
-        $data=[
-            'customerName'=>$request->customerName,
-            'customerLastName'=>$request->customerLastName,
-            'customerNumber'=>$request->customerNumber,
-            'car_id'=>$request->car_id,
-            'date'=>$request->date,  
-        ];
-        DB::table('carrecive')->insert($data);
-        return redirect('/carrecive');
+    // ตรวจสอบว่า 'car_id' ไม่ใช่ค่าว่าง (NULL) ก่อนที่จะบันทึกข้อมูล
+    if($request->has('car_id')) {
+        $car_id = $request->car_id;
+    } else {
+        return back()->with('error', 'กรุณาเลือกทะเบียนรถ');
+        // แสดงข้อความแจ้งเตือนหรือทำการ redirect กลับไปยังหน้าแรกหรือหน้าที่เหมาะสม
     }
 
+    $carrecive = new Carrecive;
+    $carrecive->customerName = $request->customerName;
+    $carrecive->customerLastName = $request->customerLastName;
+    $carrecive->customerNumber = $request->customerPhone;
+    $carrecive->car_id = $car_id; // กำหนดค่า 'car_id' ที่ตรวจสอบแล้ว
+    $carrecive->date = $request->receiveDate;
+    $carrecive->save();
+
+    return redirect('/carrecive');
+    }   
 }
