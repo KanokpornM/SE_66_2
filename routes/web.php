@@ -71,3 +71,5 @@ Route::get('/employee',[employeeController::class,'index'])->name('employee');
 Route::get('/recive',[reciveController::class,'index'])->name('recive');
 Route::get('/edit/{carcheck_id}',[reciveController::class,'edit'])->name('edit');
 Route::get('/addrecive',[reciveController::class,'addrecive'])->name('addrecive');
+Route::post('/insertrecive', [reciveController::class, 'insert'])->name('insertrecive');
+

@@ -21,25 +21,34 @@ class reciveController extends Controller
     }
 
     function addrecive(){
-        $data1=DB::table('carcheck')->get();
+        $data1=DB::table('carrecive')->get();
         $data2=DB::table('addby')->get();
         $data3=DB::table('carcheckstatus')->get();
         return view('addrecive',['data1'=>$data1,'data2'=>$data2,'data3'=>$data3]);
     }
 
-    function update(Request $request,$carcheck_id){
+    function insert(Request $request){
         $request->validate(
             [
-            'carR_id'=>'required'
+                'detail'=>'required|max:50',
             ],
             [
-                'carR_id.required'=>'แก้ไขสถานะ โดย 1-พัง และ 2-ไม่พัง'
+                'detail.required' =>'กรุณาระบุอาการ',
             ]
         );
-        $data=[
-            'checkcarstatus_id'=>$request->checkcarstatus_id
+        $data = [
+            'carR_ID' => $request->car_id,
+            'detail' => $request->detail,
+            'date' => now(),
+            'checkcarstatus_id' => $request->checkcarstatus_id,
+            'addBy_id' => 1, 
         ];
-        DB::table('carcheck')->where('carcheck_id',$carcheck_id)->update($data);
-        return redirect('/recive');
-    }
-}
+    
+        // บันทึกข้อมูลลงในตาราง carcheck
+        DB::table('carcheck')->insert($data);
+    
+        // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
+        return redirect()->route('recive');
+    } 
+
+ }
