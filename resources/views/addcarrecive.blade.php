@@ -51,7 +51,7 @@
     @enderror
     <br> 
 
-    <select class="form-select w-25" aria-label="Default select example" >
+    <select class="form-select w-25" name="car_id" aria-label="Default select example" >
       <option selected hidden>Open this select Car ID</option>
       @foreach ($carList as $item)
       <option value="{{$item->car_id}}">{{$item->car_id}}</option>
