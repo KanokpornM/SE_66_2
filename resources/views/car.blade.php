@@ -14,33 +14,33 @@
             <a type="button" class="btn btn-success"style="width:70px; height:38px; " href="{{ route('addcar')}}">เพิ่ม</a>
         </div>
     </div>
-    <table style="margin-top:10px"class="table table-bordered">
+    <table style="margin-top:10px" class="table table-bordered text-center">
         <tr>
-            <td style="text-align:center">ทะเบียนรถ</td>
-            <td style="text-align:center">รุ่นรถ</td>
-            <td style="text-align:center">แบรนด์รถ</td>
-            <td style="text-align:center">เลขคัสซี</td>
-            <td style="text-align:center">สีรถ</td>
-            <td style="text-align:center">ปีของรถ</td>
-            <td style="text-align:center">ชื่อเจ้าของรถ</td>
-            <td style="text-align:center">นามสกุลเจ้าของรถ</td>
-            <td style="text-align:center">เบอร์โทรศัพท์เจ้าของรถ</td>
-            <td style="text-align:center">ลบ</td>
-            <td style="text-align:center">แก้ไข</td>
+            <td>ทะเบียนรถ</td>
+            <td>รุ่นรถ</td>
+            <td>แบรนด์รถ</td>
+            <td>เลขคัสซี</td>
+            <td>สีรถ</td>
+            <td>ปีของรถ</td>
+            <td>ชื่อเจ้าของรถ</td>
+            <td>นามสกุลเจ้าของรถ</td>
+            <td>เบอร์โทรศัพท์เจ้าของรถ</td>
+            <td>ลบ</td>
+            <td>แก้ไข</td>
         </tr>
 
         @foreach ($car as $item)
             <tr>
-                <td style='text-align:center'>{{$item->car_id}}</td>
-                <td style='text-align:center'>{{$item->model}}</td>
-                <td style='text-align:center'>{{$item->brand}}</td>
-                <td style='text-align:center'>{{$item->chassis}}</td>
-                <td style='text-align:center'>{{$item->color}}</td>
-                <td style='text-align:center'>{{$item->year}}</td>
-                <td style='text-align:center'>{{$item->ownerName}}</td>
-                <td style='text-align:center'>{{$item->ownerLastName}}</td>
-                <td style='text-align:center'>{{$item->ownerNumber}}</td>
-                <td style='text-align:center' class='content-center'><button type='button' class='btn btn-danger'>
+                <td>{{$item->car_id}}</td>
+                <td>{{$item->model}}</td>
+                <td>{{$item->brand}}</td>
+                <td>{{$item->chassis}}</td>
+                <td>{{$item->color}}</td>
+                <td>{{$item->year}}</td>
+                <td>{{$item->ownerName}}</td>
+                <td>{{$item->ownerLastName}}</td>
+                <td>{{$item->ownerNumber}}</td>
+                <td class='content-center'><button type='button' class='btn btn-danger'>
                     <a href="{{route('delete',$item->car_id)}}" onclick="return confirm('ต้องการลบข้อมูลรถของหมายเลขทะเบียน {{$item->car_id}} หรือไม่ ?')">ลบ</a></button></td>
 
                 <td style='text-align:center'><button type='button' class='btn btn-secondary'>
