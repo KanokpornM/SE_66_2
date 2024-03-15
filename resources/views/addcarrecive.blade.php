@@ -40,16 +40,6 @@
         </div>
     @enderror
     
-    <br> 
-    <div class="form-group">
-      <input class="w-25" type="date" name="date">
-    </div>
-    @error('date')
-        <div style="color:red">
-            <span>{{$message}}</span>
-        </div>
-    @enderror
-    <br> 
 
     <select class="form-select w-25" name="car_id" aria-label="Default select example" >
       <option selected hidden>Open this select Car ID</option>

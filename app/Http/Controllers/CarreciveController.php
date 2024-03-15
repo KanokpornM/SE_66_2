@@ -22,13 +22,12 @@ class CarreciveController extends Controller
     }
 
     function insert(Request $request){
-        /*
+    
     $request->validate([
         'customerName'=>'required',
         'customerLastName'=>'required',
         'customerPhone'=>'required|max:10',
         'car_id'=>'required|max:7', // ตรวจสอบว่า 'car_id' มีการส่งมาหรือไม่
-        'receiveDate'=>'date',
     ],[
         'customerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
         'customerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
@@ -36,8 +35,7 @@ class CarreciveController extends Controller
         'customerPhone.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
         'car_id.required' =>'กรุณาเลือกทะเบียนรถ', // ข้อความแจ้งเตือนเมื่อ 'car_id' เป็นค่าว่าง
         'car_id.max' => 'ทะเบียนรถไม่ควรเกิน 7 ตัวอักษร',
-        'receiveDate' =>'กรุณากรอกวันที่',
-    ]);*/
+    ]);
 
     $data=[
         'customerName'=>$request->customerName,
