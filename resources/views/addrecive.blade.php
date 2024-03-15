@@ -8,17 +8,14 @@
         <center>
         <input type="text" class="from-control" placeholder="No."> <br><br>
         <input type="text" class="from-control" placeholder="อาการ"><br><br>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              สถานะ
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">####</a></li>
-              
-            </ul>
-          </div><br>
-    </center>
-    </div>
+        
+        <select class="form-select form-select-border-width:2px" aria-label="Small select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
     <div>
         <center>
         <a type="button" class="btn btn-danger" href="{{ route('recive') }}">ยกเลิก</a>
