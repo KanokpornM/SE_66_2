@@ -1,6 +1,9 @@
 @extends('layout')
 @section('title', 'EditCarCheck')
 
+<!-- hide search bar     -->
+@section('searchBar','none')
+
 @section('content')
     <h2>แก้ไขประวัติอาการรถ</h2>
    

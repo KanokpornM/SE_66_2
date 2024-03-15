@@ -7,7 +7,7 @@
 @section('content')
     <h2>เพิ่มข้อมูลรับรถ</h2>
     
-    <form method="POST" action="/insertcarrecive">
+    <form method="POST" action="{{route('insertcarrecive')}}">
       @csrf  
       <center>
         <div class="form-group">
@@ -40,18 +40,8 @@
         </div>
     @enderror
     
-    <br> 
-    <div class="form-group">
-      <input class="w-25" type="date" name="date">
-    </div>
-    @error('date')
-        <div style="color:red">
-            <span>{{$message}}</span>
-        </div>
-    @enderror
-    <br> 
 
-    <select class="form-select w-25" aria-label="Default select example" >
+    <select class="form-select w-25" name="car_id" aria-label="Default select example" >
       <option selected hidden>Open this select Car ID</option>
       @foreach ($carList as $item)
       <option value="{{$item->car_id}}">{{$item->car_id}}</option>
