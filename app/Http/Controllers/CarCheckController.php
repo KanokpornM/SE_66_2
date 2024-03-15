@@ -51,5 +51,21 @@ class CarCheckController extends Controller
         return redirect()->route('carcheck');
     }    
 
+    //function edit($carcheck_id){
+    //    $cars=DB::table('carcheck')->where('carcheck_id',$carcheck_id)->first();
+    //    return view('editcarcheck',compact('carcheck_id'));
+    //}
+    function edit($carcheck_id){
+        $cars = DB::table('carcheck')->where('carcheck_id',$carcheck_id)->first();
+        return view('editcarcheck',compact('cars'));
+    }
+
+    function update(Request $request,$carcheck_id){
+        $data=[
+            'detail'=>$request->detail,
+        ];
+        DB::table('carcheck')->where('carcheck_id',$carcheck_id)->update($data);
+        return redirect('/carcheck');
+    }
 
 }

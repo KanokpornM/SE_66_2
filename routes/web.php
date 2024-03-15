@@ -46,6 +46,8 @@ Route::post('/carcheck',[CarCheckController::class,'search'])->name('carcheckSea
 Route::get('/deletecarcheck/{carcheck_id}',[CarCheckController::class,'delete'])->name('delete');
 Route::post('/insertcarcheck', [CarCheckController::class, 'insert'])->name('insertcarcheck');
 Route::get('/addcarcheck',[CarCheckController::class,'addcarcheck'])->name('addcarcheck');
+Route::get('/editcarcheck/{carcheck_id}',[CarCheckController::class,'edit'])->name('editcarcheck');
+Route::post('updatecarcheck/{carcheck_id}',[CarCheckController::class,'update'])->name('updatecarcheck');
 
 Route::get('/recive',[AdminController::class,'recive'])->name('recive');
 

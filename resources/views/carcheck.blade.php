@@ -19,7 +19,7 @@
             <td><a href="{{route('delete',$item->carcheck_id)}}" onclick="return confirm('ต้องการลบใช่หรือไม่')">
                 <button type='button' class='btn btn-danger'>ลบ</button></a></td>
 
-            <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
+            <td><a button type='button' class='btn btn-secondary' href="{{route('editcarcheck',$item->carcheck_id)}}">แก้ไข</a></td>
 
         </tr>
         @endforeach
