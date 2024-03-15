@@ -26,15 +26,16 @@ class CarreciveController extends Controller
     $request->validate([
         'customerName'=>'required',
         'customerLastName'=>'required',
-        'customerPhone'=>'required|max:10',
-        'car_id'=>'required|max:7', // ตรวจสอบว่า 'car_id' มีการส่งมาหรือไม่
+        'customerPhone'=>'required|regex:/^[0-9]+$/|min:10|max:11',
+        'car_id'=>'required', // ตรวจสอบว่า 'car_id' มีการส่งมาหรือไม่
     ],[
         'customerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
         'customerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
         'customerPhone.required' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถ',
-        'customerPhone.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
+        'customerPhone.regex' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถเป็นเลขเท่านั้น',
+        'customerPhone.min' => 'เบอร์โทรศัพท์เจ้าของรถควรมี 10 ตัวอักษร',
+        'customerPhone.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 10 ตัวอักษร',
         'car_id.required' =>'กรุณาเลือกทะเบียนรถ', // ข้อความแจ้งเตือนเมื่อ 'car_id' เป็นค่าว่าง
-        'car_id.max' => 'ทะเบียนรถไม่ควรเกิน 7 ตัวอักษร',
     ]);
 
     $data=[
