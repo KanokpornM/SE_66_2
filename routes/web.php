@@ -35,10 +35,10 @@ Route::post('update/{car_id}',[CarController::class,'update'])->name('update');
 Route::get('/delete/{car_id}',[CarController::class,'delete'])->name('delete');
 Route::post('/car',[CarController::class,'search'])->name('search');
 
-Route::get('/carrecive',[carreciveController::class,'carrecive'])->name('carrecive');
+Route::get('/carrecive',[CarreciveController::class,'carrecive'])->name('carrecive');
 Route::get('addcarrecive',[CarreciveController::class,'addcarrecive'])->name('addcarrecive');
 //Route::post('/carrecive',[carreciveController::class,'search'])->name('carreciveSearch');
-Route::post('/insertcarrecive',[carreciveController::class,'insert'])->name('insertcarrecive');
+Route::post('/insertcarrecive',[CarreciveController::class,'insert'])->name('insertcarrecive');
 
 #Route::get('/carcheck',[AdminController::class,'carcheck'])->name('carcheck');
 Route::get('/carcheck',[CarCheckController::class,'index'])->name('carcheck');
