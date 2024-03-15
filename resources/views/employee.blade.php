@@ -21,11 +21,11 @@
             <td>{{$item->lastname}}</td>
             <td>{{$item->po}}</td>
             <td>{{$item->phone}}</td>
-            <td class='content-center'><button type='button' class='btn btn-danger'>
-                <a href="#">ลบ</a></button></td>
+            <td>
+                <a type="button" class="btn btn-danger" href="">ลบ</a></td>
 
-            <td><button type='button' class='btn btn-secondary'>
-                <a href="#">แก้ไข</a></button></td>
+            <td>
+                <a type="button" class="btn btn-secondary">แก้ไข</a></button></td>
         </tr>
        
        @endforeach
