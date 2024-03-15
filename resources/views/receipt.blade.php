@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title','recipt')
-
+@section('searchBar','none')
 @section('content')
 <h2>ใบเเสร็จ</h2>
     

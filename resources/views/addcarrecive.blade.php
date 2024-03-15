@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'addcarrevice')
-
+@section('searchBar','none')
 <!-- hide search bar     -->
 @section('searchBar','none')
 

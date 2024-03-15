@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'AddCarCheck')
-
+@section('searchBar','none')
 @section('content')
     <h2>เพิ่มประวัตอาการรถ</h2>
    

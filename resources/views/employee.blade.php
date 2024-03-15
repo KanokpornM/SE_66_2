@@ -30,6 +30,5 @@
        
        @endforeach
     </table>
-    <label for="cars">Choose a car:</label>
 
 @endsection
