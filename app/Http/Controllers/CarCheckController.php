@@ -11,7 +11,7 @@ class CarCheckController extends Controller
 {
     function index(){
         $search = '';
-        $carcheck = DB::table('carcheck')->get();
+        $carcheck = CarCheckModel::search($search);
         return view('carcheck',compact('carcheck','search'));
     }
 
