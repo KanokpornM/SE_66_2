@@ -58,7 +58,8 @@ class CarreciveController extends Controller
 
     function edit($carR_id){
         $carrecive = DB::table('carrecive')->where('carR_id',$carR_id)->first();
-        return view('editcarrecive',compact('carrecive'));
+        $carList = Carrecive::getCarList();
+        return view('editcarrecive',compact('carrecive','carList'));
     }
 
     function update(Request $request,$carR_id){
