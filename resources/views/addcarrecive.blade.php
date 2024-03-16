@@ -40,7 +40,7 @@
         </div>
     @enderror
     
-
+        <br>
     <select class="form-select w-25" name="car_id" aria-label="Default select example" >
       <option selected value="" hidden>Open this select Car ID</option>
       @foreach ($carList as $item)

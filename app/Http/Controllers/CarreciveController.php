@@ -50,4 +50,9 @@ class CarreciveController extends Controller
 
     return redirect('carrecive');
     }   
+
+    function delete($carR_id){
+        DB::table('carrecive')->where('carR_id',$carR_id)->delete();
+        return redirect('/carrecive');
+    }
 }

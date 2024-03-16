@@ -7,6 +7,7 @@
     
     <table class="table table-bordered text-center">
         <tr>
+            <td>ID</td>
             <td>ชิ่อ</td>
             <td>สกุล</td>
             <td>เบอร์</td>
@@ -18,12 +19,14 @@
         <tbody>
             @foreach ($carrecive as $recive) 
             <tr>
+                <td>{{$recive->carR_id}}</td>
                 <td>{{$recive->customerName}}</td>
                 <td>{{$recive->customerLastName}}</td>
                 <td>{{$recive->customerPhone}}</td>
                 <td>{{$recive->car_id}}</td>
                 <td>{{$recive->date}}</td>
-                <td><button type='button' class='btn btn-danger'>ลบ</button></td>
+                <td><a href="{{route('deletecarrecive',$recive->carR_id)}}" onclick="return confirm('ต้องการลบใช่หรือไม่')">
+                    <button type='button' class='btn btn-danger'>ลบ</button></a></td>    
                 <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
             </tr>
             @endforeach
