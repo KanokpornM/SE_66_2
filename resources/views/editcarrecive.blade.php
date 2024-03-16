@@ -38,12 +38,17 @@
       @enderror
       
           <br>
-      <select class="form-select w-25" name="car_id" aria-label="Default select example" >
-        <option selected value="" hidden>Open this selct Car ID</option>
-        @foreach ($carList as $item)
-        <option value="{{$item->car_id}}">{{$item->car_id}}</option>
-        @endforeach
-      </select>
+          <select class="form-select w-25" name="car_id" aria-label="Default select example" >
+            <!-- ส่วนที่เพิ่ม เริ่ม -->
+            @if(isset($prevCar))
+                <option value="{{$prevCar->car_id}}">{{$prevCar->car_id}}</option>
+            @endif
+            <!-- ส่วนที่เพิ่ม จบ -->
+            @foreach ($carList as $item)
+                <option value="{{$item->car_id}}">{{$item->car_id}}</option>
+            @endforeach
+          </select>
+  
       @error('car_id')
       <div style="color:red">
           <span>{{$message}}</span>
