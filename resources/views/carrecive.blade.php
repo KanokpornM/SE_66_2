@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Carcheck')
+@section('title', 'Carrecive')
 
 
 @section('content')
@@ -25,9 +25,10 @@
                 <td>{{$recive->customerPhone}}</td>
                 <td>{{$recive->car_id}}</td>
                 <td>{{$recive->date}}</td>
-                <td><a href="{{route('deletecarrecive',$recive->carR_id)}}" onclick="return confirm('ต้องการลบใช่หรือไม่')">
+                <td><a href="{{route('deletecarrecive',$recive->carR_id)}}" onclick="return confirm('ต้องการลบข้อมูลรับรถหมายเลข {{$recive->carR_id}} ใช่หรือไม่')">
                     <button type='button' class='btn btn-danger'>ลบ</button></a></td>    
-                <td><button type='button' class='btn btn-secondary'>แก้ไข</button></td>
+                <td>
+                    <a type="button" class="btn btn-secondary" href="{{route('editcarrecive',$recive->carR_id)}}">แก้ไข</a></button></td> 
             </tr>
             @endforeach
         </tbody>
