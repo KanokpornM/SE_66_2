@@ -44,7 +44,7 @@
                     <a type="button" class="btn btn-danger" href="{{route('delete',$item->car_id)}}" onclick="return confirm('ต้องการลบข้อมูลรถของหมายเลขทะเบียน {{$item->car_id}} หรือไม่ ?')">ลบ</a></td>
 
                 <td>
-                    <a type="button" class="btn btn-secondary" href="{{route('edit',$item->car_id)}}">แก้ไข</a></button></td>
+                    <a type="button" class="btn btn-secondary" href="{{route('edit',$item->car_id)}}">แก้ไข</a></td>
             </tr>
         @endforeach
 

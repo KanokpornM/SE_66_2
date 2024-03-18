@@ -73,5 +73,10 @@ class AdminController extends Controller
 
     }
 
+    function addemployee(){
+        return view('addemployee');
+
+    }
+
 
 }
