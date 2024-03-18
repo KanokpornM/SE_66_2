@@ -64,7 +64,7 @@ Route::get('/partlist',[AdminController::class,'partlist'])->name('partlist');
 Route::get('/quotation',[AdminController::class,'quotation'])->name('quotation');
 Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
 Route::get('/addcar',[AdminController::class,'addcar'])->name('addcar');
-Route::get('/addemployee',[AdminController::class,'addemployee'])->name('addemployee');
+
 
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
 
@@ -74,9 +74,12 @@ Route::get('/addrecive',[reciveController::class,'addrecive'])->name('addrecive'
 Route::post('/insertrecive', [reciveController::class, 'insert'])->name('insertrecive');
 Route::post('updaterecive/{carcheck_id}',[reciveController::class,'update'])->name('updaterecive');
 
+
+#Employee Route
 Route::get('/employee',[employeeController::class,'index'])->name('employee');
 Route::get('/addemployee',[employeeController::class,'getposition'])->name('addemp');
-Route::get('/insertemp',[employeeController::class,'insert'])->name('insertemp');
-#Route::get('/addemployee',[AdminController::class,'addemployee'])->name('addemployee');
-Route::get('/deleteemp/{id}',[employeeController::class,'delete'])->name('deleteemp');
-
+Route::post('/insertemp',[employeeController::class,'insert'])->name('insertemp');
+Route::get('/deleteemp/{emp_id}',[employeeController::class,'delete'])->name('deleteemp');
+Route::get('/editemp/{emp_id}',[employeeController::class,'edit'])->name('editemp');
+Route::post('updateemp/{emp_id}',[employeeController::class,'update'])->name('updateemp');
+Route::post('/employee',[employeeController::class,'search'])->name('search');
