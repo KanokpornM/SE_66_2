@@ -31,27 +31,49 @@ class reciveController extends Controller
     }
 
     function addrecive(){
-        $data1=DB::table('carrecive')->get();
-        $data2=DB::table('addby')->get();
-        $data3=DB::table('carcheckstatus')->get();
-        return view('addrecive',['data1'=>$data1,'data2'=>$data2,'data3'=>$data3]);
+        $cars = DB::table('carrecive')->get();
+        $data=DB::table('carcheckstatus')->get();
+        return view('addrecive', ['cars' => $cars,'data'=> $data]);
     }
 
+    // function insert(Request $request){
+    //     $request->validate(
+    //         [
+    //             'detail'=>'required|max:50',
+    //         ],
+    //         [
+    //             'detail.required' =>'กรุณาระบุอาการ',
+    //         ]
+    //     );
+    //     $data = [
+    //         'carR_ID' => $request->car_id,
+    //         'detail' => $request->detail,
+    //         'date' => now(),
+    //         'checkcarstatus_id' => $request->name,
+    //         'addBy_id' => 1, 
+    //     ];
+    
+    //     // บันทึกข้อมูลลงในตาราง carcheck
+    //     DB::table('carcheck')->insert($data);
+    
+    //     // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
+    //     return redirect()->route('recive');
+    // } 
     function insert(Request $request){
-        $request->validate(
-            [
-                'detail'=>'required|max:50',
-            ],
-            [
-                'detail.required' =>'กรุณาระบุอาการ',
-            ]
-        );
+        $request->validate([
+            'detail'=>'required|max:50',
+            'checkcarstatus_id' =>'required' // เพิ่ม validation rule สำหรับ checkcarstatus_id
+        ], [
+            'detail.required' =>'กรุณาระบุอาการ',
+            'checkcarstatus_id.required' =>'กรุณาเลือกสถานะ'
+        ]);
+    
         $data = [
             'carR_ID' => $request->car_id,
             'detail' => $request->detail,
             'date' => now(),
             'checkcarstatus_id' => $request->checkcarstatus_id,
-            'addBy_id' => 1, 
+            'addBy_id' => 1
         ];
     
         // บันทึกข้อมูลลงในตาราง carcheck
@@ -59,7 +81,8 @@ class reciveController extends Controller
     
         // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
         return redirect()->route('recive');
-    } 
+    }
+    
 
     function update(Request $request,$carcheck_id){ //ยังทำไม่ได้
         // ตรวจสอบว่ามีค่าสำหรับ 'checkcarstatus_id' ที่ถูกส่งมาจากฟอร์มหรือไม่
@@ -78,7 +101,7 @@ class reciveController extends Controller
             'carR_ID' => $request->car_id,
             'detail' => $request->detail,
             'date' => now(),
-            'checkcarstatus_id' => $checkcarstatus_id,
+            'checkcarstatus_id' => $request->carcheckstatus_id, // เปลี่ยนชื่อฟิลด์จาก 'checkcarstatus_id' เป็น 'carcheckstatus_id'
             'addBy_id' => $request->addBy_id ?? 1,
             ];
         DB::table('carcheck')->where('carcheck_id',$carcheck_id)->update($data);
