@@ -73,7 +73,8 @@ Route::get('/employee',[employeeController::class,'index'])->name('employee');
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
 
 Route::get('/recive',[reciveController::class,'index2'])->name('recive');
-Route::get('/edit/{carcheck_id}',[reciveController::class,'edit'])->name('edit');
+Route::get('/editrecive/{carcheck_id}',[reciveController::class,'edit'])->name('editrecive');
 Route::get('/addrecive',[reciveController::class,'addrecive'])->name('addrecive');
 Route::post('/insertrecive', [reciveController::class, 'insert'])->name('insertrecive');
+Route::post('updaterecive/{carcheck_id}',[reciveController::class,'update'])->name('updaterecive');
 

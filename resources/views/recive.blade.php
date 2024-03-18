@@ -16,7 +16,7 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->name2 }}</td>
                 <td><button type='button' class='btn btn-secondary'>
-                        <a href="{{ route('edit', $item->carcheck_id) }}">แก้ไข</a>
+                        <a href="{{ route('editrecive',$item->carcheck_id) }}">แก้ไข</a>
                     </button>
                 </td>
             </tr>

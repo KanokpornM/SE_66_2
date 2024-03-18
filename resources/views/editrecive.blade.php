@@ -1,31 +1,33 @@
 @extends('layout')
-@section('title', 'addrecive')
+@section('title', 'editrecive')
 
 @section('content')
     <h2>แก้ไขข้อมูล</h2>
 
-    <form method="POST" action="{{ route('update', $carcheck->carcheck_id) }}">
+    <form method="POST" action="{{ route('updaterecive', $carcheck->carcheck_id) }}">
         @csrf
         <center>
             <div class="form-group">
-                <label for="checkcarstatus_id">สถานะ</label><br>
-                <text>1-พัง 2-ไม่พัง</text><br>
-                <input style="text-align: center" type="integer" name="checkcarstatus_id" placeholder=""
-                    value="{{ $carcheck->checkcarstatus_id }}">
+                <label for="carcheck_id"></label>
+                <input class="w-25" style="text-align:center" type="text" name="detail" placeholder="อาการ"
+                    value="{{ $carcheck->detail }}">
             </div>
-            @error('checkcarstatus_id')
+            <br>
+            @error('carcheck_id')
                 <div style="color:red">
                     <span>{{ $message }}</span>
                 </div>
             @enderror
+            <select class="form-select w-25" aria-label="Default select example">
+                <option selected>สถานะ</option>
+                @foreach ($data as $item)
+                    <option value="{{ $item->carcheckstatus_id }}"">{{ $item->name }}</option>
+                @endforeach
+            </select>
             <br>
-
-            <div>
-                <center>
-                    <a type="button" class="btn btn-danger" href="{{ route('recive') }}">ยกเลิก</a>
-                    <a type="summit" class="btn btn-success"
-                        onclick="return confirm('ต้องการอัพเดต{{ $carcheck->checkcarstatus_id }} หรือไม่')">อัปเดต</a>
-                </center>
+            <div class="d-flex flex-row justify-content-center" style="gap:20px">
+                <a href="/recive" class="btn btn-danger" style="width:70px; height:38px;">ยกเลิก</a> 
+                <input type="submit" value="แก้ไข" class="btn btn-success" style="width:70px; height:38px;">
             </div>
     </form>
     <script>
