@@ -34,30 +34,60 @@ class CarCheckController extends Controller
         return view('addcarcheck', ['cars' => $cars]);
 
     }
+//    function insert(Request $request){
 
-    function insert(Request $request){
-        $request->validate(
-            [
-                'detail'=>'required|max:50',
-            ],
-            [
-                'detail.required' =>'กรุณาระบุอาการ',
-            ]
-        );
+        //dd($request->all());
+//        $request->validate(
+//            [
+//                'carR_id'=>'required',
+//                'detail'=>'required|max:50',
+//            ],
+//            [
+//                'carR_id.required'=>'กรุณาเลือกรถ',
+//                'detail.required' =>'กรุณาระบุอาการ',
+//            ]
+//        );
+ //       $data = [
+ //           'carR_id' => $request->carR_id,
+ //           'detail' => $request->detail,
+ //           'date' => now(),
+ //           'checkcarstatus_id' => 1,
+ //           'addBy_id' => 2, 
+ //       ];
+    
+        // บันทึกข้อมูลลงในตาราง carcheck
+ //       DB::table('carcheck')->insert($data);
+    
+        // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
+ //       return redirect()->route('carcheck');
+  //  }   
+  
+  function insert(Request $request){
+    $request->validate([
+        'carR_id'=>'required', // ตรวจสอบว่ามีการเลือกรถ
+        'detail'=>'required|max:50',
+    ],
+    [
+        'carR_id.required'=>'กรุณาเลือกรถ',
+        'detail.required' =>'กรุณาระบุอาการ',
+    ]);
+
+    
         $data = [
-            'carR_ID' => $request->car_id,
+            'carR_id' => $request->carR_id,
             'detail' => $request->detail,
             'date' => now(),
             'checkcarstatus_id' => 1,
             'addBy_id' => 2, 
         ];
-    
+
         // บันทึกข้อมูลลงในตาราง carcheck
         DB::table('carcheck')->insert($data);
-    
+
         // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
         return redirect()->route('carcheck');
-    }    
+    
+}
 
     //function edit($carcheck_id){
     //    $cars=DB::table('carcheck')->where('carcheck_id',$carcheck_id)->first();
