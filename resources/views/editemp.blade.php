@@ -6,12 +6,12 @@
 
 @section('content')
     <h2>เพิ่มพนักงงาน</h2>
-    <form method="POST" action="/insertemp">
+    <form method="POST" action="{{route('updateemp',$emp->id)}}">
         @csrf
         <center>
             <div class="form-group">
                 <label for="name"></label>
-                <input class="w-25" style="text-align:center" type="text" name="name" placeholder="ชื่อ">
+                <input class="w-25" style="text-align:center" type="text" name="name" placeholder="ชื่อ" value="{{$emp->name}}">
             </div>
             @error('name')
                 <div style="color:red">
@@ -22,7 +22,7 @@
 
             <div class="form-group">
                 <label for="lastname"></label>
-                <input class="w-25" style="text-align:center" type="text" name="lastname" placeholder="นามสกุล">
+                <input class="w-25" style="text-align:center" type="text" name="lastname" placeholder="นามสกุล" value="{{$emp->lastname}}">
             </div>
             @error('lastname')
                 <div style="color:red">
@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="po_id"></label>
                 <select name="po_id" class="form-select w-25" style="text-align:center">
-                    <option selected hidden value="">ตำแหน่ง</option>
+                    <option selected hidden value="{{$emp->po_id}}">{{$emp->po}}</option>
                     @foreach ($po as $item)
                         <option value="{{ $item->po_id }}">{{ $item->name }}</option>
                     @endforeach
@@ -48,7 +48,7 @@
 
             <div class="form-group">
                 <label for="phone"></label>
-                <input class="w-25" style="text-align:center" type="text" name="phone"placeholder="เบอร์ติดต่อ">
+                <input class="w-25" style="text-align:center" type="text" name="phone"placeholder="เบอร์ติดต่อ"value="{{$emp->phone}}">
             </div>
             @error('phone')
             <div style="color:red">
@@ -59,8 +59,8 @@
         <div>
             <center>
                 <br>
-                <input type="submit" value="เพิ่ม" class="btn btn-success">
                 <a type="button" class="btn btn-danger" href="{{ route('employee') }}">ยกเลิก</a>
+                <input type="submit" value="บันทึก" class="btn btn-success">
             </center>
         </div>
     </form>
