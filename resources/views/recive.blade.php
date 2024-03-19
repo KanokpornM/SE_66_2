@@ -3,7 +3,7 @@
 
 @section('content')
     <h2>ตรวจสอบรถ</h2>
-    <table class="table table-bordered text-center">
+    <table class="table table-bordered text-center my-2">
         <tr>
             <td>อาการ</td>
             <td>เพิ่มโดย</td>
