@@ -43,6 +43,9 @@
               <li class="nav-item me-5">
                 <a class="nav-link" href="{{route('employee')}}">จัดการพนักงาน</a>
               </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="{{route('quotat')}}">รายการ</a>
+              </li>
             </ul>
           </div>
         </div>

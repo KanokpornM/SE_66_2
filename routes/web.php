@@ -85,3 +85,7 @@ Route::get('/deleteemp/{emp_id}',[employeeController::class,'delete'])->name('de
 Route::get('/editemp/{emp_id}',[employeeController::class,'edit'])->name('editemp');
 Route::post('updateemp/{emp_id}',[employeeController::class,'update'])->name('updateemp');
 Route::post('/employee',[employeeController::class,'search'])->name('search');
+
+Route::get('/quotat', function () {
+    return view('quotat');
+})->name('quotat');
