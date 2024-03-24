@@ -10,10 +10,7 @@
         <div class="">
             <center>
                 <select name="car_id" class="form-select w-25" style="text-align:center">
-                    <option selected>เลือกรถ</option>
-                    @foreach ($cars as $car)
-                        <option value="{{ $car->carR_id }}">{{ $car->car_id }}</option>
-                    @endforeach
+                        <option value="{{$id}}">{{ $car->car_id}}</option>
                 </select>
             </center>
         </div><br>
@@ -32,7 +29,7 @@
         <br>
         <div>
             <center>
-                <a type="button" class="btn btn-danger" href="{{ route('recive') }}">ยกเลิก</a>
+                {{-- <a type="button" class="btn btn-danger" href="{{ route('recive') }}">ยกเลิก</a> --}}
                 <button type="submit" class="btn btn-success">เพิ่ม</button>
             </center>
         </div>

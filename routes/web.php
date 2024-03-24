@@ -60,17 +60,17 @@ Route::post('updatecarcheck/{carcheck_id}',[CarCheckController::class,'update'])
 Route::get('/list',[ListController::class,'index'])->name('list');
 Route::post('/list',[ListController::class,'search'])->name('listSearch');
 
-#oute::get('/employee',[AdminController::class,'employee'])->name('employee');
+#Route::get('/employee',[AdminController::class,'employee'])->name('employee');
 
 Route::get('/partlist',[AdminController::class,'partlist'])->name('partlist');
-Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
+//Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
 
 
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
 
-Route::get('/recive',[reciveController::class,'index2'])->name('recive');
+Route::get('/recive/{id}',[reciveController::class,'index2'])->name('recive');
 Route::get('/editrecive/{carcheck_id}',[reciveController::class,'edit'])->name('editrecive');// สำหรับแสดงหน้าแก้ไขตรวจสอบรถ
-Route::get('/addrecive',[reciveController::class,'addrecive'])->name('addrecive');
+Route::get('/addrecive/{id}',[reciveController::class,'addrecive'])->name('addrecive');
 Route::post('/insertrecive', [reciveController::class, 'insert'])->name('insertrecive');
 //Route::post('updaterecive/{carcheck_id}',[reciveController::class,'update'])->name('updaterecive');
 Route::put('/updaterecive/{carcheck_id}', [reciveController::class, 'update'])->name('updaterecive');// สำหรับอัปเดตข้อมูลตรวจสอบรถ

@@ -15,14 +15,13 @@
                 <td>{{ $item->detail }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->name2 }}</td>
-                <td><button type='button' class='btn btn-secondary'>
-                        <a href="{{ route('editrecive', $item->carcheck_id) }}">แก้ไข</a>
-                    </button>
+                <td><a type='button' class='btn btn-secondary' href="{{ route('editrecive', $item->carcheck_id) }}">แก้ไข</href=>
                 </td>
             </tr>
         @endforeach
         <div class="d-flex justify-content-end mt2">
-            <a type="button" class="btn btn-success me2" href="{{route('addrecive')}}">เพิ่ม</a>
+            <a type="button" class="btn btn-success me2" href="{{route('addrecive',$id)}}">เพิ่ม</a>
+            <a type="button" class="btn btn-primary me2" href="{{route('carrecive')}}">กลับ</a>
         </div>
     </table>
 

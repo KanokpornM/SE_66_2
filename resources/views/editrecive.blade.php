@@ -23,7 +23,7 @@
                 </select>
             </div>
             <br>
-            <a href="{{ route('recive') }}" class="btn btn-danger">ยกเลิก</a>
+            {{-- <a href="{{ route('recive') }}" class="btn btn-danger">ยกเลิก</a> --}}
             <button type="submit" class="btn btn-success">บันทึก</button>
         </center>
     </form>

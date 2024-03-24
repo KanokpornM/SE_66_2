@@ -16,6 +16,7 @@
             <td>ลบ</td>
             <td>แก้ไข</td>
             <td>ประวัติอาการรถ</td>
+            <td>ตรวจสอบรถ</td>
         </tr>
         <tbody>
             @foreach ($carrecive as $recive) 
@@ -29,6 +30,7 @@
                 <td><a href="{{route('deletecarrecive',$recive->carR_id)}}" onclick="return confirm('ต้องการลบข้อมูลรับรถหมายเลข {{$recive->carR_id}} ใช่หรือไม่')" type='button' class='btn btn-danger'>ลบ</a></td>    
                 <td><a type="button" class="btn btn-secondary" href="{{route('editcarrecive',$recive->carR_id)}}">แก้ไข</a></td> 
                 <td><a type="button" class="btn btn-primary" href="{{route('carcheck',$recive->carR_id)}}">ประวัติ</a></td> 
+                <td><a type="button" class="btn btn-primary" href="{{route('recive',$recive->carR_id)}}">ตรวจสอบรถ</a></td> 
             </tr>
             @endforeach
         </tbody>

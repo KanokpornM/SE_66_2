@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use App\Models\recive;
-
+use App\Models\CarCheckModel;
 class reciveController extends Controller
 {
     function index(){
@@ -16,18 +16,18 @@ class reciveController extends Controller
         return view('recive',compact('recives'));
     }
 
-    function index2(){
-        $recives=DB::table('carcheck')
+    function index2($id){
+        $recives=DB::table('carcheck')->where('carR_id',$id)
         ->join('addby','addby.addBy_id','=','carcheck.addBy_id')
         ->join('carcheckstatus','carcheckstatus.carcheckstatus_id','=','carcheck.checkcarstatus_id')
         ->select('carcheck.carcheck_id','carcheck.detail', 'addby.name','carcheckstatus.name as name2')
         ->get();
-        return view('recive',compact('recives'));
+        return view('recive',compact('recives','id'));
     }
 
-    function addrecive(){
-        $cars = DB::table('carrecive')->get();
-        return view('addrecive', ['cars' => $cars]);
+    function addrecive($id){
+        $car=DB::table('carrecive')->where('carR_id',$id)->get()->first();
+        return view('addrecive',compact('car','id'));
     }
 
     function insert(Request $request){
@@ -49,7 +49,7 @@ class reciveController extends Controller
         DB::table('carcheck')->insert($data);
     
         // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
-        return redirect()->route('recive');
+        return redirect()->route('recive',$data['carR_ID']);
     }
     
 // ฟังก์ชันแก้ไขข้อมูลตรวจสอบรถ
@@ -76,9 +76,9 @@ public function edit($carcheck_id)
 
     // อัปเดตข้อมูลในฐานข้อมูล
     DB::table('carcheck')->where('carcheck_id', $carcheck_id)->update($data);
-
+    $carcheck = CarCheckModel::get($carcheck_id);
     // ส่งกลับไปยังหน้ารายการตรวจสอบรถหลังจากที่อัปเดตข้อมูลเสร็จสมบูรณ์
-    return redirect()->route('recive');
+    return redirect()->route('recive',$carcheck->value('carR_id'));
 }
 
     // function edit($carcheck_id){
