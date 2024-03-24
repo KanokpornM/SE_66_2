@@ -51,7 +51,7 @@ Route::get('/carcheck',[CarCheckController::class,'index'])->name('carcheck');
 Route::post('/carcheck',[CarCheckController::class,'search'])->name('carcheckSearch');
 Route::get('/deletecarcheck/{carcheck_id}',[CarCheckController::class,'delete'])->name('carcheckdelete'); #ชื่อซ้ำกับของ car
 Route::post('/insertcarcheck', [CarCheckController::class, 'insert'])->name('insertcarcheck');
-Route::get('/addcarcheck',[CarCheckController::class,'addcarcheck'])->name('addcarcheck');
+Route::get('/addcarcheck/{carR_id}',[CarCheckController::class,'addcarcheck'])->name('addcarcheck');
 Route::get('/editcarcheck/{carcheck_id}',[CarCheckController::class,'edit'])->name('editcarcheck');
 Route::post('updatecarcheck/{carcheck_id}',[CarCheckController::class,'update'])->name('updatecarcheck');
 

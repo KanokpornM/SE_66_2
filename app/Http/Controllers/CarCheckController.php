@@ -29,8 +29,8 @@ class CarCheckController extends Controller
     }
 
 
-    function addcarcheck(){
-        $cars = DB::table('carrecive')->get();
+    function addcarcheck($carR_id){
+        $cars = DB::table('carrecive')->where('carR_id',$carR_id)->get();
         return view('addcarcheck', ['cars' => $cars]);
 
     }

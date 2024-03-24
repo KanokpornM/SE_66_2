@@ -17,7 +17,7 @@
                     <option selected hidden disabled>เลือกรถ</option>
                     @foreach($cars as $car)
                         <!-- <option value="{{ $car->carR_id }}">{{ $car->car_id }}</option> -->
-                        <option value="{{ $car->carR_id }}" {{ old('carR_id') == $car->carR_id ? 'selected' : '' }}>{{ $car->car_id }}</option>
+                        <option value="{{ $car->carR_id }}" selected>{{ $car->car_id }}</option>
                     @endforeach
                 </select>   
                 @error('carR_id')

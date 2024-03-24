@@ -28,7 +28,7 @@
     </table>
 
     <div class="d-flex justify-content-end mt2">
-        <a type="button" class="btn btn-success me2" href="{{ route('addcarcheck') }}">เพิ่ม</a>
+        <a type="button" class="btn btn-success me2" href="{{ route('addcarcheck',$search) }}">เพิ่ม</a>
     </div>
 
 @endsection
