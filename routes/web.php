@@ -8,6 +8,7 @@ use App\Http\Controllers\CarreciveController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarCheckController;
 use App\Http\Controllers\reciveController;
+use App\Http\Controllers\QuotatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,9 +63,7 @@ Route::post('/list',[ListController::class,'search'])->name('listSearch');
 #oute::get('/employee',[AdminController::class,'employee'])->name('employee');
 
 Route::get('/partlist',[AdminController::class,'partlist'])->name('partlist');
-Route::get('/quotation',[AdminController::class,'quotation'])->name('quotation');
 Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
-Route::get('/addcar',[AdminController::class,'addcar'])->name('addcar');
 
 
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
@@ -86,6 +85,16 @@ Route::get('/editemp/{emp_id}',[employeeController::class,'edit'])->name('editem
 Route::post('updateemp/{emp_id}',[employeeController::class,'update'])->name('updateemp');
 Route::post('/employee',[employeeController::class,'search'])->name('search');
 
+Route::get('/quotation',[AdminController::class,'quotation'])->name('quotation');
+
 Route::get('/quotat', function () {
     return view('quotat');
 })->name('quotat');
+
+Route::get('/quotat',[QuotatController::class,'index'])->name('quotat');
+Route::get('/addquotat',[QuotatController::class,'addquotat'])->name('addquotat');
+Route::post('/insertquotat',[QuotatController::class,'insert'])->name('insertquotat');
+Route::get('/deletequotat/{quotation_id}',[QuotatController::class,'delete'])->name('deletequotat');
+Route::post('/quotat',[QuotatController::class,'search'])->name('quotatSearch');
+Route::get('/editquotat/{quotation_id}',[QuotatController::class,'edit'])->name('editquotat');
+Route::post('updatequotat/{quotation_id}',[QuotatController::class,'update'])->name('updatequotat');

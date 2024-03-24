@@ -2,7 +2,7 @@
 @section('title','recipt')
 @section('searchBar','none')
 @section('content')
-<h2>ใบเเสนอราคา</h2>
+<h2>ใบเสนอราคา</h2>
     
     <style>
         .card {
