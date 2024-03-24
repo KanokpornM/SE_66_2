@@ -16,8 +16,7 @@
 
         <tr>
             <td>{{$item->detail}}</td>
-            <td><a href="{{route('carcheckdelete',$item->carcheck_id)}}" onclick="return confirm('ต้องการลบใช่หรือไม่')">
-                <button type='button' class='btn btn-danger'>ลบ</button></a></td>
+            <td><a href="{{route('carcheckdelete',$item->carcheck_id)}}" onclick="return confirm('ต้องการลบใช่หรือไม่')" type='button' class='btn btn-danger'>ลบ</a></td>
 
             <td><a button type='button' class='btn btn-secondary' href="{{route('editcarcheck',$item->carcheck_id)}}">แก้ไข</a></td>
 
@@ -28,7 +27,8 @@
     </table>
 
     <div class="d-flex justify-content-end mt2">
-        <a type="button" class="btn btn-success me2" href="{{ route('addcarcheck',$search) }}">เพิ่ม</a>
+        <a type="button" class="btn btn-success me2" href="{{ route('addcarcheck',$id) }}">เพิ่ม</a>
+        <a type="button" class="btn btn-primary me2 " href="{{ route('carrecive') }}">กลับ</a>
     </div>
 
 @endsection

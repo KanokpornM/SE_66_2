@@ -9,29 +9,29 @@ use Illuminate\Support\Facades\Auth;
 
 class CarCheckController extends Controller
 {
-    function index(){
-        $search = '';
-        $carcheck = CarCheckModel::search($search);
-        return view('carcheck',compact('carcheck','search'));
+    function index($id){
+        $carcheck = CarCheckModel::search($id);
+        return view('carcheck',compact('carcheck','id'));
     }
 
 
-    function search(Request $request){
-        $search = $request->search;
-        $carcheck = CarCheckModel::search($search);
+    // function search(Request $request){
+    //     $search = $request->search;
+    //     $carcheck = CarCheckModel::search($search);
 
-        return view('carcheck',compact('carcheck', 'search'));
-    }
+    //     return view('carcheck',compact('carcheck', 'search'));
+    // }
 
     function delete($carcheck_id){
+        $carcheck = CarCheckModel::get($carcheck_id);
         DB::table('carcheck')->where('carcheck_id',$carcheck_id)->delete();
-        return redirect('/carcheck');
+        return redirect()->route('carcheck',$carcheck->value('carR_id'));
     }
 
 
     function addcarcheck($carR_id){
         $cars = DB::table('carrecive')->where('carR_id',$carR_id)->get();
-        return view('addcarcheck', ['cars' => $cars]);
+        return view('addcarcheck',compact('cars','carR_id'));
 
     }
 //    function insert(Request $request){
@@ -83,9 +83,8 @@ class CarCheckController extends Controller
 
         // บันทึกข้อมูลลงในตาราง carcheck
         DB::table('carcheck')->insert($data);
-
         // Redirect ไปยังหน้า carcheck หลังจากบันทึกข้อมูลเสร็จสมบูรณ์
-        return redirect()->route('carcheck');
+        return redirect()->route('carcheck',['id' => $data['carR_id']]);
     
 }
 
@@ -110,8 +109,9 @@ class CarCheckController extends Controller
         $data=[
             'detail'=>$request->detail,
         ];
+        $carcheck = CarCheckModel::get($carcheck_id);
         DB::table('carcheck')->where('carcheck_id',$carcheck_id)->update($data);
-        return redirect('/carcheck');
+        return redirect()->route('carcheck',$carcheck->value('carR_id'));
     }
 
 }

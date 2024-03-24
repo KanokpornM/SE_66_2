@@ -32,9 +32,6 @@
                 <a class="nav-link" href="{{route('carrecive')}}">ข้อมูลรับรถ</a>
               </li>
               <li class="nav-item me-5">
-                <a class="nav-link" href="{{route('carcheck')}}">ประวัติอาการรถ</a>
-              </li>
-              <li class="nav-item me-5">
                 <a class="nav-link" href="{{route('recive')}}">ตรวจสอบรถ</a>
               </li>
               <li class="nav-item me-5">

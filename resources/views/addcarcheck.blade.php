@@ -44,7 +44,7 @@
         <div>
             <center>
                 <button type="submit" class="btn btn-success">บันทึก</button>
-                <a type="button" class="btn btn-danger" href="{{ route('carcheck') }}">ยกเลิก</a>
+                <a type="button" class="btn btn-danger" href="{{ route('carcheck',$carR_id) }}">ยกเลิก</a>
             </center>
         </div>
     </form>

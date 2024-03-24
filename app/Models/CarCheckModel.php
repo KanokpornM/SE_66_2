@@ -13,4 +13,7 @@ class CarcheckModel extends Model
     public static function search($key){
         return DB::table('carcheck')->where('carR_id', $key)->get();
     }
+    public static function get($key){
+        return DB::table('carcheck')->where('carcheck_id', $key)->get();
+    }
 }
