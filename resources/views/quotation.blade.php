@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <button type="botton" name="botton" id="print" onclick="window.print();">print</button>
+   
     <a href="{{ url('/generate-quotation-pdf') }}">ดาวน์โหลด ใบเสร็จ</a>
 
 @endsection
