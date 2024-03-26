@@ -2,9 +2,14 @@
 @section('title','recipt')
 @section('searchBar','none')
 @section('content')
+
+
 <h2>ใบเสนอราคา</h2>
+
     
     <style>
+
+        
         .card {
             margin: 20px;
             border: 4px solid #040202;
@@ -63,5 +68,7 @@
             </div>
         </div>
     </div>
+    <button type="botton" name="botton" id="print" onclick="window.print();">print</button>
+    <a href="{{ url('/generate-quotation-pdf') }}">ดาวน์โหลด ใบเสร็จ</a>
 
 @endsection

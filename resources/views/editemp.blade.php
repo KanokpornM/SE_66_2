@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="po_id"></label>
                 <select name="po_id" class="form-select w-25" style="text-align:center">
-                    <option selected hidden value="{{$emp->po_id}}">{{$emp->po}}</option>
+                    <option selected hidden value="{{$emp->po}}">{{$emp->po}}</option>
                     @foreach ($po as $item)
                         <option value="{{ $item->po_id }}">{{ $item->name }}</option>
                     @endforeach

@@ -1,10 +1,12 @@
-@extends('layout')
-@section('title','Partlist')
-@section('searchBar','none')
-@section('content')
-<h2>ใบสั่งซ่อม</h2>
-
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* เปลี่ยนเป็นฟอนต์ที่รองรับภาษาไทย */
+        }
         .card {
             margin: 20px;
             border: 4px solid #040202;
@@ -12,14 +14,14 @@
             padding: 20px;
         }
         .table {
-                border: 2px solid #040202;
-                
+            border: 2px solid #040202;
         }
         .card-header {
-        text-align: center; 
+            text-align: center;
         }
     </style>
-
+</head>
+<body>
 
     <div class="container">
         <div class="card">
@@ -67,7 +69,6 @@
             </div>
         </div>
     </div>
-    <button type="botton" name="botton" id="print" onclick="window.print();">print</button>
-    <a href="{{ url('/generate-partlist-pdf') }}">ดาวน์โหลด ใบสั่งซ่อม</a>
-    
-@endsection
+
+</body>
+</html>

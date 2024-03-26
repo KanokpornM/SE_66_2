@@ -9,6 +9,8 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarCheckController;
 use App\Http\Controllers\reciveController;
 use App\Http\Controllers\QuotatController;
+use App\Http\Controllers\PdfController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +65,7 @@ Route::post('/list',[ListController::class,'search'])->name('listSearch');
 #Route::get('/employee',[AdminController::class,'employee'])->name('employee');
 
 Route::get('/partlist',[AdminController::class,'partlist'])->name('partlist');
-//Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
+Route::get('/receipt',[AdminController::class,'receipt'])->name('receipt');
 
 
 #Route::get('/addcarcheck',[AdminController::class,'addcarcheck'])->name('addcarcheck');
@@ -98,3 +100,7 @@ Route::get('/deletequotat/{quotation_id}',[QuotatController::class,'delete'])->n
 Route::post('/quotat',[QuotatController::class,'search'])->name('quotatSearch');
 Route::get('/editquotat/{quotation_id}',[QuotatController::class,'edit'])->name('editquotat');
 Route::post('updatequotat/{quotation_id}',[QuotatController::class,'update'])->name('updatequotat');
+
+Route::get('/generate-quotation-pdf', [PdfController::class, 'quotationPdf']);
+Route::get('/generate-partlist-pdf', [PdfController::class, 'partlistPdf']);
+Route::get('/generate-receipt-pdf', [PdfController::class, 'receiptPdf']);

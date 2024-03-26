@@ -15,8 +15,8 @@
 
     <table class="table table-bordered text-center">
         <tr>
-            <td>อาการ</td>
-            <td>อะไหล่</td>
+            <td>รายการ</td>
+            <td>ข้อมูลรับรถ</td>
             <td>จำนวน</td>
             <td>วันที่</td>
             <td>ลบ</td>
