@@ -58,7 +58,7 @@ class QuotatController extends Controller
             ],
             [
                 'quotation_id.required' =>'กรุณากรอกอาการ',
-                'carR_id.required' =>'กรุณากรอกรายการอะหล่',
+                'carR_id.required' =>'กรุณากรอกรายการอะไหล่',
                 'detail.required' =>'กรุณากรอกรายละเอียด',
                 'status.required' =>'กรุณากรอกจำนวน',
                 'date.required' =>'กรุณาเลือกวันที่',
