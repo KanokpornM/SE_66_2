@@ -77,7 +77,7 @@ class CarController extends Controller
                 'year'=>'required|max:4',
                 'ownerName'=>'required',
                 'ownerLastName'=>'required',
-                'ownerNumber'=>'required|max:10',
+                'ownerNumber'=>'required|regex:/^[0-9]+$/|max:10',
             ],
             [
                 'car_id.required' =>'กรุณากรอกทะเบียนรถ',
@@ -92,7 +92,7 @@ class CarController extends Controller
                 'ownerName.required' =>'กรุณากรอกชื่อเจ้าของรถ',
                 'ownerLastName.required' =>'กรุณากรอกนามสกุลเจ้าของรถ',
                 'ownerNumber.required' =>'กรุณากรอกเบอร์โทรศัพท์เจ้าของรถ',
-                'ownerNumber.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 7 ตัวอักษร',
+                'ownerNumber.max' => 'เบอร์โทรศัพท์เจ้าของรถไม่ควรเกิน 10 ตัวอักษร',
             ]
         );
         $data=[
